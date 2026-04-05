@@ -1,9 +1,9 @@
-import React from  'react'
-import  "./Add.scss"
+import React from  'react';
+import Navbar from '../../components/navbar/navbar';
 
-const Add = () => {
+function App() {
     return(
-         <div className='add'>Add</div>
+        <div><Navbar /></div>
     )
 }
-export default Add
+export default App;
