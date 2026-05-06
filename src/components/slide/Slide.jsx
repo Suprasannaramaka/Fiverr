@@ -1,14 +1,24 @@
-import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import "./Slide.scss";
-import Slider from "infinite-react-carousel";
 
-const Slide = ({ children, slidesToShow, arrowsScroll }) => {
+const Slide = ({ children }) => {
   return (
     <div className="slide">
       <div className="container">
-        <Slider slidesToShow={slidesToShow} arrowsScroll={arrowsScroll}>
-          {children}
-        </Slider>
+        <Swiper
+          modules={[Navigation]}
+          navigation
+          spaceBetween={30}
+          slidesPerView={4}
+          loop={true}
+        >
+          {children.map((item, index) => (
+            <SwiperSlide key={index}>{item}</SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
